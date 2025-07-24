@@ -63,10 +63,10 @@ photozip = 'https://envs.sh/cD_.jpg'
 
 
 # Inline keyboard for start command
-BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/saini_contact_bot")]])
+BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="http://t.me/abhinavdrmbot")]])
 keyboard = InlineKeyboardMarkup(
     [
-        [InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct")],
+        [InlineKeyboardButton(text="🛠️ Help", url="http://t.me/abhinavdrmbot"), InlineKeyboardButton(text="🛠️ Bot", url="http://t.me/abhinavdrmbot")],
     ]
 )
 
@@ -427,7 +427,7 @@ async def txt_handler(bot: Client, m: Message):
 
 
 m_file_path= "main.py"
-@bot.on_message(filters.command("getcookies") & filters.private)
+@bot.on_message(filters.command("herogetcookies") & filters.private)
 async def getcookies_handler(client: Client, m: Message):
     try:
         # Send the cookies file to the user
