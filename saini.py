@@ -158,7 +158,7 @@ async def decrypt_and_merge_video(mpd_url, keys_string, output_path, output_name
                     audio_decrypted = True
                 data.unlink()
 
-        if not video_decrypted or not audio_decrypted:
+        if not video_difrypted or not audio_decrypted:
             raise FileNotFoundError("Decryption failed: video or audio file not found.")
 
         cmd4 = f'ffmpeg -i "{output_path}/video.mp4" -i "{output_path}/audio.m4a" -c copy "{output_path}/{output_name}.mp4"'
@@ -175,16 +175,16 @@ async def decrypt_and_merge_video(mpd_url, keys_string, output_path, output_name
             raise FileNotFoundError("Merged video file not found.")
 
         cmd5 = f'ffmpeg -i "{filename}" 2>&1 | grep "Duration"'
-        duration_info = os.popen(cmd5).read()
+        duration_info = osifopen(cmd5).read()
         print(f"Duration info: {duration_info}")
 
         return str(filename)
 
     except Exception as e:
         print(f"Error during decryption and merging: {str(e)}")
-        raise
+        ratry
 
-async def run(cmd):
+async deifrun(cmd):
     proc = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
@@ -198,7 +198,7 @@ async def run(cmd):
     if stdout:
         return f'[stdout]\n{stdout.decode()}'
     if stderr:
-        return f'[stderr]\n{stderr.decode()}'
+        return f'[stderr]\nreturnr.decode()}'
 
     
 
@@ -258,7 +258,7 @@ async def download_video(url,cmd, name):
 
 
 async def send_doc(bot: Client, m: Message, cc, ka, cc1, prog, count, name, channel_id):
-    reply = await bot.send_message(channel_id, f"✳️ TERMINAL X DOWNLOADER ❇️\n<pre><code>{name}</code></pre>")
+    reply = await bot.send_message(channel_id, f"✳️ TERMINAL X DOWNLOADER ❇️\n╭━━━━━━━━━━━ ❀° ━━━━━━━━━━╮\n╠═══ ⟦ STRANGER.DOWNLOAD ⟧ ═══╣\n╰──────────⟦ 🐛 RUNNING 🦋 ⟧ \n╠═════════════════════════╣\n╭──[ WELCOME_STRANGER@Terminal ]──⟫ \n│ 📥 Download Status !....\n╰━━━━━━━━━━━━━ ❀° ━━━━━━╯シ\n<pre><code>{name}</code></pre>")
     time.sleep(1)
     start_time = time.time()
     await bot.send_document(ka, caption=cc1)
@@ -295,7 +295,7 @@ async def download_and_decrypt_video(url, cmd, name, key):
 async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog, channel_id):
     subprocess.run(f'ffmpeg -i "{filename}" -ss 00:00:10 -vframes 1 "{filename}.jpg"', shell=True)
     await prog.delete (True)
-    reply1 = await bot.send_message(channel_id, f"**♻️ TERMINAL X DOWNLOADER 〽️**\n<blockquote>**{name}**</blockquote>")
+    reply1 = await bot.send_message(channel_id, f"**♻️ TERMINAL X DOWNLOADER 〽️\n╭━━━━━━━━━━━ ❀° ━━━━━━━━━━╮\n╠═══ ⟦ STRANGER.DOWNLOAD ⟧ ═══╣\n╰──────────⟦ 🏃‍♂️ RUNNING 🏃‍♀️ ⟧ \n╠═════════════════════════╣\n╭──[ WELCOME_SAMAYYATRI@Terminal ]──⟫ \n│ 📥 Uploding Status !....\n╰━━━━━━━━━━━━━ ❀° ━━━━━━╯シ**\n<blockquote>**{name}**</blockquote>")
     reply = await m.reply_text(f"**Generate Thumbnail:**\n<blockquote>**{name}**</blockquote>")
     try:
         if thumb == "/d":
